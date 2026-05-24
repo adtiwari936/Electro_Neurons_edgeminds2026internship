@@ -1,5 +1,23 @@
 # EDGE MINDS HACKATHON 2026
 
+#### Team Name :
+
+Electro_Neurons
+
+#### Team ID :
+
+EDGM26-DWDPMR
+
+#### Team Lead :
+
+Aditya Tiwari
+
+#### Team Members :
+
+Shubhankar
+Anshuman Shukla
+Dheeraj Yadav
+
 ## Problem Statement :
 
 Build an AI agent where the SLM is the brain - planning steps, calling tools, evaluating
