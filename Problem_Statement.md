@@ -1,22 +1,12 @@
 # EDGE MINDS HACKATHON 2026
 
-#### Team Name :
+#### Team Name : Electro_Neurons
 
-Electro_Neurons
+#### Team ID : EDGM26-DWDPMR
 
-#### Team ID :
+#### Team Lead : Aditya Tiwari
 
-EDGM26-DWDPMR
-
-#### Team Lead :
-
-Aditya Tiwari
-
-#### Team Members :
-
-Shubhankar
-Anshuman Shukla
-Dheeraj Yadav
+#### Team Members : Shubhankar, Anshuman Shukla, Dheeraj Yadav
 
 ## Problem Statement :
 
