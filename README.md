@@ -1,4 +1,4 @@
-# Electro_Neurons_edgeminds2026internship
+# Electro_Neurons_edgeminds2026
 
 Autonomous local research agent built for **EDGE MINDS HACKATHON 2026** by Team **Electro_Neurons**. The project uses **LLaMA 3.2 (1B)** through Ollama to break a research topic into sub-questions, retrieve relevant evidence from local documents, generate concise evidence-grounded answers, and compile a final report without relying on external APIs.
 
