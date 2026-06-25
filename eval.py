@@ -20,7 +20,7 @@ def retrieval_score(evidence_map, expected_sources):
 
     for evidences in evidence_map.values():
         for e in evidences:
-            filename = e.file.split("\\")[-1]
+            filename = e.file.replace("\\", "/").split("/")[-1]
             retrieved_files.add(filename)
 
     expected_files = set(expected_sources)
