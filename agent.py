@@ -31,4 +31,10 @@ def run_agent(topic: str) -> str:
     save_report(report, cfg.output_dir)
     save_evidence(evidence_map, cfg.output_dir)
 
-    return report
+    return {
+    "topic": topic,
+    "subquestions": subquestions,
+    "answers": answers,
+    "evidence": evidence_map,
+    "report": report
+}

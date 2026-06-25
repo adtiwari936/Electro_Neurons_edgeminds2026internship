@@ -1,0 +1,17 @@
+
+ [
+  {
+    "topic": "impact of climate change on crop yield in India",
+    "expected_keywords": [
+      "wheat",
+      "rice",
+      "drought",
+      "temperature",
+      "rainfall"
+    ],
+    "expected_sources": [
+      "sample1.md",
+      "sample2.txt"
+    ]
+  }
+]
