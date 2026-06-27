@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Local Research Agent</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Marked.js (Markdown renderer) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <i data-lucide="cpu" class="logo-icon animate-pulse"></i>
+                <div class="logo-text">
+                    <h1>Electro Neurons</h1>
+                    <span>Autonomous Local Research Agent</span>
+                </div>
+            </div>
+            <div class="badge-area">
+                <span class="status-badge offline-badge">
+                    <span class="pulse-dot"></span> Offline Research Mode
+                </span>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="dashboard-grid">
+            <!-- Sidebar: Inputs & Controls -->
+            <aside class="settings-panel">
+                <h2><i data-lucide="sliders" class="section-icon"></i> Parameters</h2>
+                <form id="research-form">
+                    <div class="form-group">
+                        <label for="topic">Research Topic</label>
+                        <textarea id="topic" rows="3" placeholder="Enter a topic (e.g. impact of climate change on crop yield in India)..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="max-subquestions">Max Sub-questions</label>
+                            <input type="number" id="max-subquestions" min="1" max="10" value="4">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="top-k">Top K snippets</label>
+                            <input type="number" id="top-k" min="1" max="10" value="4">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="start-btn" class="primary-btn">
+                        <i data-lucide="play" class="btn-icon"></i> Start Research
+                    </button>
+                    <button type="button" id="cancel-btn" class="secondary-btn hidden">
+                        <i data-lucide="square" class="btn-icon"></i> Stop Agent
+                    </button>
+                </form>
+
+                <div class="docs-info-box">
+                    <div class="info-header">
+                        <i data-lucide="folder-search" class="info-icon"></i>
+                        <h3>Active Knowledge Base</h3>
+                    </div>
+                    <p>Scanning local documents in your repository. Works completely offline.</p>
+                </div>
+            </aside>
+
+            <!-- Main Content Area: Progress & Results -->
+            <main class="results-panel">
+                <!-- Stepper Progress Tracker -->
+                <div id="progress-container" class="card hidden animate-fade-in">
+                    <div class="card-header">
+                        <h2><i data-lucide="activity" class="section-icon"></i> Agent Execution Log</h2>
+                        <span id="current-action" class="action-tag">Initializing...</span>
+                    </div>
+                    <div class="stepper">
+                        <div id="step-scan" class="step">
+                            <div class="step-icon"><i data-lucide="search"></i></div>
+                            <div class="step-details">
+                                <h3>Scan Local Repository</h3>
+                                <p id="scan-desc">Waiting...</p>
+                            </div>
+                        </div>
+                        <div id="step-plan" class="step">
+                            <div class="step-icon"><i data-lucide="network"></i></div>
+                            <div class="step-details">
+                                <h3>Topic Decomposition</h3>
+                                <p id="plan-desc">Waiting...</p>
+                            </div>
+                            <div id="planned-subquestions-list" class="subquestions-container hidden"></div>
+                        </div>
+                        <div id="step-process" class="step">
+                            <div class="step-icon"><i data-lucide="bot"></i></div>
+                            <div class="step-details">
+                                <h3>Retrieval & Synthesis Loop</h3>
+                                <p id="process-desc">Waiting...</p>
+                            </div>
+                            <div id="loop-progress-container" class="loop-progress hidden">
+                                <div class="progress-bar-bg">
+                                    <div id="loop-progress-fill" class="progress-bar-fill" style="width: 0%"></div>
+                                </div>
+                                <span id="loop-progress-text">0/0 completed</span>
+                            </div>
+                        </div>
+                        <div id="step-compile" class="step">
+                            <div class="step-icon"><i data-lucide="file-check"></i></div>
+                            <div class="step-details">
+                                <h3>Compile Research Report</h3>
+                                <p id="compile-desc">Waiting...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state" class="empty-card">
+                    <i data-lucide="brain-circuit" class="empty-icon animate-bounce-slow"></i>
+                    <h2>Awaiting Your Topic</h2>
+                    <p>Enter a research topic in the left panel to trigger the autonomous LLM agent workflow.</p>
+                </div>
+
+                <!-- Tabs for Results (Report vs Evidence) -->
+                <div id="results-container" class="hidden animate-fade-in">
+                    <div class="results-header-tabs">
+                        <button id="tab-report" class="tab-btn active">
+                            <i data-lucide="file-text" class="tab-icon"></i> Research Report
+                        </button>
+                        <button id="tab-evidence" class="tab-btn">
+                            <i data-lucide="database" class="tab-icon"></i> Evidence Vault
+                        </button>
+                    </div>
+
+                    <!-- Report Content -->
+                    <section id="content-report" class="tab-content card">
+                        <div class="content-actions">
+                            <button id="copy-report-btn" class="small-btn" title="Copy Raw Markdown">
+                                <i data-lucide="copy" class="btn-icon"></i> Copy Markdown
+                            </button>
+                        </div>
+                        <div id="report-rendered" class="markdown-body"></div>
+                    </section>
+
+                    <!-- Evidence Content -->
+                    <section id="content-evidence" class="tab-content card hidden">
+                        <div id="evidence-accordion" class="accordion-list">
+                            <!-- Dynamically filled evidence items -->
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/main.js"></script>
+    <script>
+        // Initialize Lucide icons on page load
+        lucide.createIcons();
+    </script>
+</body>
+</html>
