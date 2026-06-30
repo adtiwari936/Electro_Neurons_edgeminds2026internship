@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Specifies the character encoding for the page so text displays correctly in all browsers. -->
     <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive by setting the viewport width to the device width. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the title shown in the browser tab. -->
     <title>Autonomous Local Research Agent</title>
 
+    <!-- Preconnect helps the browser establish an early connection to Google Fonts for faster loading. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Preconnect to the fonts CDN with cross-origin support for better performance. -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Loads the Inter font family with multiple font weights for a clean UI appearance. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Loads Lucide icons from a CDN so the page can use vector icons if needed. -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Loads the Marked library, which converts Markdown text into HTML for display in the report section. -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <!-- Links the local CSS file using Flask's url_for, which correctly resolves the static file path. -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=2">
 </head>
 <body>
+    <!-- Main wrapper for the entire page layout. -->
     <div class="container">
+        <!-- Header section containing the application name and mode indicator. -->
         <header class="app-header">
+            <!-- Left side of the header showing the project name and subtitle. -->
             <div>
+                <!-- Main title of the project. -->
                 <h1>Electro Neurons</h1>
+
+                <!-- Subtitle describing the system as an autonomous local research agent. -->
                 <p class="subtitle">Autonomous Local Research Agent</p>
             </div>
+
+            <!-- Status badge showing that the system works in offline research mode. -->
             <div class="status-box">
+                <!-- Colored indicator dot used as a visual status symbol. -->
                 <span class="status-dot"></span>
+
+                <!-- Text label describing the current operating mode. -->
                 <span>Offline Research Mode</span>
             </div>
         </header>
 
+        <!-- Main page grid that divides the screen into input and output areas. -->
         <main class="main-grid">
+            <!-- Sidebar card used for research input and instructions. -->
             <aside class="sidebar card">
+                <!-- Section heading for the research input panel. -->
                 <h2>Research Input</h2>
+
+                <!-- Short description explaining what the user should do. -->
                 <p class="muted">
                     Enter a topic to run the local research workflow and generate a report from your local documents.
                 </p>
 
+                <!-- Form used to collect the topic from the user and submit it to the backend. -->
                 <form id="research-form" method="post" action="javascript:void(0);">
+                    <!-- Label for the text area; improves accessibility and clarity. -->
                     <label for="topic">Research topic</label>
+
+                    <!-- Multi-line input field where the user enters the topic to research. -->
                     <textarea
                         id="topic"
                         name="topic"
@@ -43,35 +77,56 @@
                         required
                     ></textarea>
 
+                    <!-- Submit button that starts the agent workflow. -->
                     <button type="submit" id="submit-btn">Run Agent</button>
                 </form>
 
+                <!-- Information box explaining the internal workflow to the user. -->
                 <div class="info-box">
+                    <!-- Heading for the explanation box. -->
                     <h3>How it works</h3>
+
+                    <!-- Description of the workflow: subquestions, local search, evidence-based report. -->
                     <p>
                         The system breaks the topic into subquestions, searches local documents, and produces a final report with supporting evidence.
                     </p>
                 </div>
             </aside>
 
+            <!-- Main content area where errors and generated reports are displayed. -->
             <section class="content-area">
+                <!-- Error display card, hidden by default, used to show backend or validation errors. -->
                 <div id="error-box" class="card error-box" style="display: none;">
+                    <!-- Error heading shown when something goes wrong. -->
                     <h2>Error</h2>
+
+                    <!-- Paragraph where the actual error message is inserted dynamically by JavaScript. -->
                     <p id="error-text"></p>
                 </div>
 
+                <!-- Main report display card. -->
                 <div class="card">
+                    <!-- Top row of the report card containing the title and copy button. -->
                     <div class="result-header">
+                        <!-- Heading for the generated research output section. -->
                         <h2>Research Report</h2>
+
+                        <!-- Button that allows the user to copy the final report to the clipboard. -->
                         <button type="button" id="copy-btn">Copy Report</button>
                     </div>
 
+                    <!-- Small box showing the current research topic. -->
                     <div class="topic-box">
+                        <!-- Static label for the topic display. -->
                         <strong>Topic:</strong>
+
+                        <!-- Dynamic topic placeholder that will be replaced after the user submits a query. -->
                         <span id="topic-output">Awaiting input</span>
                     </div>
 
+                    <!-- Output area where the markdown report is displayed after processing. -->
                     <div id="report-content" class="report-box markdown-preview">
+                        <!-- Default placeholder text shown before any search is run. -->
                         <p>Enter a topic and start the agent. The report will appear here after the local backend finishes processing.</p>
                     </div>
                 </div>
@@ -79,7 +134,10 @@
         </main>
     </div>
 
+    <!-- Loads the front-end JavaScript file that handles form submission, API calls, and report rendering. -->
     <script src="{{ url_for('static', filename='js/app.js') }}?v=2"></script>
+
+    <!-- Initializes Lucide icons after the page content has loaded. -->
     <script>
         if (window.lucide) {
             lucide.createIcons();
