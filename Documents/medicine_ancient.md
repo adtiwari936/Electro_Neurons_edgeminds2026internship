@@ -1,0 +1,19 @@
+## Medicine in Ancient India
+
+Medicine in ancient India developed as a rich and practical system that combined observation, philosophy, herbal knowledge, surgery, hygiene, and preventive care. The tradition is most closely associated with Ayurveda, the “science of life,” which aimed to maintain harmony in the body, mind, and environment. Ancient Indian medicine was not based only on treating disease after it appeared; it also focused on prevention, diet, daily routine, cleanliness, and balance.
+
+The earliest medical ideas can be traced to the Atharva Veda, which includes references to healing, herbs, and protection from illness. Over time, these ideas were developed into more organized medical systems in texts such as the Charaka Samhita and the Sushruta Samhita. These works became foundational sources for diagnosis, treatment, and surgery. They were studied and passed on through teacher-student traditions and through educational centers such as Taxila and Nalanda.
+
+Ayurveda explains health in terms of the balance of three doshas: vata, pitta, and kapha. Vata is associated with movement, pitta with heat and metabolism, and kapha with stability and structure. Disease was understood as an imbalance in these forces. Treatment therefore aimed not only to remove symptoms but to restore balance through herbs, diet, cleansing methods, massage, yoga, meditation, and lifestyle discipline.
+
+Diagnosis in ancient India was highly observant. Physicians, called vaidyas, examined the patient’s pulse, appearance, eyes, skin, urine, speech, and body odor. They paid attention to emotional condition as well, because health was seen as a whole-person matter rather than only a bodily one. This made diagnosis more comprehensive than many other early medical systems.
+
+Herbal medicine was central to treatment. Ancient Indian physicians used medicinal plants, roots, spices, oils, and mineral preparations for a wide variety of conditions. Turmeric, ginger, and other plant-based remedies were used for inflammation, digestion, pain, and recovery. Diet was also considered medicine. Different foods were recommended depending on the person’s constitution and illness. Cleansing therapies, known as panchakarma, were also used to purify the body.
+
+One of the most remarkable achievements of ancient Indian medicine was surgery. Sushruta is often called the father of surgery because of the depth and detail of his surgical descriptions. The Sushruta Samhita describes many kinds of operations, including wound treatment, removal of stones, fracture care, eye procedures, and reconstructive surgery such as nasal reconstruction. The text also lists numerous instruments used for cutting, stitching, probing, and extracting. This shows that surgery in ancient India was organized and technically advanced.
+
+Hygiene was another important feature of the medical tradition. Clean water, bathing, clean living spaces, wound cleansing, and careful handling of surgical instruments were emphasized. Ancient Indian cities, especially in earlier urban centers, also show signs of planned drainage and sanitation. These public health concerns supported the broader medical belief that cleanliness is essential to health.
+
+Ancient Indian medicine influenced later traditions across the world. Medical knowledge moved through trade, translation, and cultural exchange into Persian, Arabic, and eventually European learning. The ideas of Ayurveda, surgery, herbal treatment, and preventive care continued to shape medical thought in South Asia and beyond. Even today, Ayurveda remains an important part of India’s medical heritage.
+
+In summary, medicine in ancient India was a highly developed system that combined theory and practice. It treated the human being as a complete system and valued both healing and prevention. Its achievements in surgery, herbal medicine, diagnosis, and hygiene make it one of the great medical traditions of the ancient world.
